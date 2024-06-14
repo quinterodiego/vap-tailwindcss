@@ -1,14 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  increment,
-  incrementAsync,
-  selectCount,
-} from '../product-list/productListSlice';
-
-import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const products = [
@@ -36,11 +27,6 @@ const products = [
 ]
 
 export default function Cart() {
-  const [open, setOpen] = useState(true)
-  const count = useSelector(selectCount);
-  const dispatch = useDispatch();
-
-
   return (
     <div className="mx-auto mt-12 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="border-t border-gray-200 px-4 py-6 sm:px-6">

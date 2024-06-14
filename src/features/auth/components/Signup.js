@@ -1,18 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  increment,
-  incrementAsync,
-  selectCount,
-} from '../../product-list/productListSlice';
+import React from 'react';
 import { Link } from 'react-router-dom'
 
 const Signup = () => {
-  const count = useSelector(selectCount);
-  const dispatch = useDispatch();
-
-
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
