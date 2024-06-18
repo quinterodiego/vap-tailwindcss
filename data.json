@@ -1802,7 +1802,7 @@
   "limit": 30,
   "users": [
     {
-      "id": "4050",
+      "id": "7c50",
       "email": "dquintero@allariaagro.com.ar",
       "password": "Masdasd123",
       "addresses": [
@@ -1810,9 +1810,18 @@
           "name": "Diego Quintero",
           "email": "d86webs@gmail.com",
           "phone": "01151762371",
-          "street-address": "Av. Guillermo Hudson",
+          "street_address": "Av. Guillermo Hudson",
           "city": "Quilmes Oeste",
-          "postal-code": "1879",
+          "postal_code": "1879",
+          "province": "Buenos Aires"
+        },
+        {
+          "name": "Diego Quintero 2",
+          "email": "d86webs@gmail.com",
+          "phone": "01151762371",
+          "street_address": "Av. Guillermo Hudson 1746",
+          "city": "Quilmes Oeste",
+          "postal_code": "1879",
           "province": "Buenos Aires"
         }
       ]

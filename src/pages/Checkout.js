@@ -3,6 +3,7 @@ import { Link, Navigate } from 'react-router-dom';
 import { deleteItemFromCartAsync, selectItems, updateCartAsync } from '../features/cart/cartSlice';
 import { useForm } from 'react-hook-form';
 import { selectLoggedInUser, updateUserAsync } from '../features/auth/authSlice';
+import { useState } from 'react';
 
 const Checkout = () => {
 
@@ -15,6 +16,7 @@ const Checkout = () => {
     formState: { errors },
   } = useForm()
   const user = useSelector(selectLoggedInUser)
+  const [selectedAddress, setSelectedAddress] = useState(null)
 
   const totalAmount = items.reduce((amount, item) => item.price * item.quantity + amount, 0 )
   const totalItems = items.reduce((total, item) => item.quantity + total, 0 )
@@ -84,14 +86,14 @@ const Checkout = () => {
                     </div>
 
                     <div className="col-span-full">
-                      <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
+                      <label htmlFor="street_address" className="block text-sm font-medium leading-6 text-gray-900">
                         Dirección
                       </label>
                       <div className="mt-2">
                         <input
                           type="text"
-                          {...register('street-address', { required: 'La dirección es obligatoria' })}
-                          id="street-address"
+                          {...register('street_address', { required: 'La dirección es obligatoria' })}
+                          id="street_address"
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                         />
                       </div>
@@ -112,14 +114,14 @@ const Checkout = () => {
                     </div>
 
                     <div className="sm:col-span-3">
-                      <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
+                      <label htmlFor="postal_code" className="block text-sm font-medium leading-6 text-gray-900">
                         Código Postal
                       </label>
                       <div className="mt-2">
                         <input
                           type="text"
-                          {...register('postal-code', { required: 'El código postal es obligatorio' })}
-                          id="postal-code"
+                          {...register('postal_code', { required: 'El código postal es obligatorio' })}
+                          id="postal_code"
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                         />
                       </div>
@@ -191,10 +193,10 @@ const Checkout = () => {
                             className="h-4 w-4 border-gray-300 text-[#68c3b7] focus:ring-[#68c3b7]"
                           />
                           <div className="min-w-0 flex-auto">
-                            <p className="text-sm font-semibold leading-6 text-gray-900">Calle: <span style={{ fontWeight: 'lighter' }}>{address.calle_numero}</span></p>
-                            <p className="text-sm font-semibold leading-6 text-gray-900">Localidad: <span style={{ fontWeight: 'lighter' }}>{address.localidad}</span></p>
-                            <p className="text-sm font-semibold leading-6 text-gray-900">Provincia: <span style={{ fontWeight: 'lighter' }}>{address.provincia}</span></p>
-                            <p className="text-sm font-semibold leading-6 text-gray-900">CP: <span style={{ fontWeight: 'lighter' }}>{address.CP}</span></p>
+                            <p className="text-sm font-semibold leading-6 text-gray-900">Calle: <span style={{ fontWeight: 'lighter' }}>{address.street_address}</span></p>
+                            <p className="text-sm font-semibold leading-6 text-gray-900">Localidad: <span style={{ fontWeight: 'lighter' }}>{address.city}</span></p>
+                            <p className="text-sm font-semibold leading-6 text-gray-900">Provincia: <span style={{ fontWeight: 'lighter' }}>{address.province}</span></p>
+                            <p className="text-sm font-semibold leading-6 text-gray-900">CP: <span style={{ fontWeight: 'lighter' }}>{address.postal_code}</span></p>
                           </div>
                         </div>
                       </li>
