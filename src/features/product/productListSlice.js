@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchAllProducts, fetchProductsByFilters } from './productListAPI';
+import { fetchAllProducts, fetchProdcutById, fetchProductsByFilters } from './productListAPI';
 
 const initialState = {
   products: [],
   brands: [],
   categories: [],
-  status: 'idle',
+  totalItems: 0,
+  selectedProduct: null
 };
 
 export const fetchAllProductsAsync = createAsyncThunk(
@@ -16,10 +17,18 @@ export const fetchAllProductsAsync = createAsyncThunk(
   }
 );
 
+export const fetchProdcutByIdAsync = createAsyncThunk(
+  'product/fetchProdcutById',
+  async (id) => {
+    const response = await fetchProdcutById(id);
+    return response.data;
+  }
+);
+
 export const fetchProductsByFiltersAsync = createAsyncThunk(
   'product/fetchProductsByFilters',
-  async (filter) => {
-    const response = await fetchProductsByFilters(filter);
+  async ({ filter, sort, pagination }) => {
+    const response = await fetchProductsByFilters(filter, sort, pagination);
     return response.data;
   }
 );
@@ -46,7 +55,15 @@ export const prodcutSlice = createSlice({
       })
       .addCase(fetchProductsByFiltersAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.products = action.payload;
+        state.products = action.payload.products;
+        state.totalItems = action.payload.totalItems;
+      })
+      .addCase(fetchProdcutByIdAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchProdcutByIdAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.selectedProduct = action.payload;
       });
   },
 });
@@ -54,5 +71,7 @@ export const prodcutSlice = createSlice({
 export const { increment } = prodcutSlice.actions;
 
 export const selectAllProducts = (state) => state.product.products;
+export const selecTotalItems = (state) => state.product.totalItems;
+export const selectedProductById = (state) => state.product.selectedProduct;
 
 export default prodcutSlice.reducer;

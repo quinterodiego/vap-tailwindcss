@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import {
   Disclosure,
   DisclosureButton,
@@ -10,7 +9,10 @@ import {
   Transition,
 } from '@headlessui/react'
 import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { selectItems } from '../cart/cartSlice'
+import logo_solo_img from '../../assets/logo-solo-img.png'
 
 const user = {
   name: 'Tom Cook',
@@ -23,19 +25,22 @@ const navigation = [
   { name: 'Team', href: '#', current: false }
 ]
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Your Profile', link: '#' },
+  { name: 'Settings', link: '#' },
+  { name: 'Sign out', link: '/login' },
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export const Navbar = ({children}) => {
+
+  const cartItems = useSelector(selectItems)
+
   return (
     <div>
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-primary">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -45,7 +50,7 @@ export const Navbar = ({children}) => {
                       <Link to={'/'}>
                         <img
                           className="h-8 w-8"
-                          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                          src={logo_solo_img}
                           alt="Your Company"
                         />
                       </Link>
@@ -75,16 +80,16 @@ export const Navbar = ({children}) => {
                       <Link to={'/cart'}>
                         <button
                           type="button"
-                          className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                          className="relative rounded-full bg-primary p-2 text-white hover:opacity-50 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                         >
                           <span className="absolute -inset-1.5" />
                           <span className="sr-only">View notifications</span>
                           <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
                       </Link>
-                      <span className="inline-flex items-center mb-7 -ml-3 bg-red-50 p-2 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10" style={{ zIndex: '1000000', borderRadius: '50%', width: '22px', height: '22px' }}>
-                        3
-                      </span>
+                      {cartItems.length > 0 && <span className="inline-flex items-center mb-7 -ml-3 bg-white p-2 text-xs font-medium text-primary ring-1 ring-inset ring-red-600/10" style={{ zIndex: '1000000', borderRadius: '50%', width: '22px', height: '22px' }}>
+                        {cartItems.length}
+                      </span>}
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
@@ -107,15 +112,14 @@ export const Navbar = ({children}) => {
                             {userNavigation.map((item) => (
                               <MenuItem key={item.name}>
                                 {({ focus }) => (
-                                  <a
-                                    href={item.href}
+                                  <Link to={item.link}
                                     className={classNames(
                                       focus ? 'bg-gray-100' : '',
                                       'block px-4 py-2 text-sm text-gray-700'
                                     )}
                                   >
                                     {item.name}
-                                  </a>
+                                  </Link>
                                 )}
                               </MenuItem>
                             ))}
@@ -174,9 +178,9 @@ export const Navbar = ({children}) => {
                         <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                       </button>
                     </Link>
-                    <span className="inline-flex items-center mb-7 -ml-3 bg-red-50 p-2 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10" style={{ zIndex: '1000000', borderRadius: '50%', width: '22px', height: '22px' }}>
-                      3
-                    </span>
+                    {cartItems.length > 0 && <span className="inline-flex items-center mb-7 -ml-3 bg-red-50 p-2 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10" style={{ zIndex: '1000000', borderRadius: '50%', width: '22px', height: '22px' }}>
+                      {cartItems.length}
+                    </span>}
                   </div>
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (
