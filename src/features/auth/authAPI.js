@@ -43,3 +43,9 @@ export function updateUser(update) {
     resolve({ data })
   });
 }
+
+export function singOut(userId) {
+  return new Promise( async (resolve) => {
+    resolve({ data: 'success' })
+  });
+}

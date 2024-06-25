@@ -2,21 +2,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { deleteItemFromCartAsync, selectItems, updateCartAsync } from '../features/cart/cartSlice';
 import { useForm } from 'react-hook-form';
-import { selectLoggedInUser, updateUserAsync } from '../features/auth/authSlice';
+import { updateUserAsync } from '../features/auth/authSlice';
 import { useState } from 'react';
+import { createOrderAsync, selectCurrentOrder } from '../features/order/orderSlice';
+import { selectUserInfo } from '../features/user/userSlice';
 
 const Checkout = () => {
 
   const dispatch = useDispatch()
-  const items = useSelector(selectItems)
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm()
-  const user = useSelector(selectLoggedInUser)
+  const items = useSelector(selectItems)
+  const user = useSelector(selectUserInfo)
+  const currentOrder = useSelector(selectCurrentOrder)
   const [selectedAddress, setSelectedAddress] = useState(null)
+  const [paymentMethod, setPaymentMethod] = useState('mercadoPago')
 
   const totalAmount = items.reduce((amount, item) => item.price * item.quantity + amount, 0 )
   const totalItems = items.reduce((total, item) => item.quantity + total, 0 )
@@ -29,9 +33,23 @@ const Checkout = () => {
     dispatch(deleteItemFromCartAsync(id))
   }
 
+  const handleAddress = (e) => {
+    setSelectedAddress(user.addresses[e.target.value])
+  }
+
+  const handlePayment = (e) => {
+    setPaymentMethod(e.target.value)
+  }
+
+  const handleOrder = (e) => {
+    const order = { items, totalAmount, totalItems, user, paymentMethod, selectedAddress, status: 'pending' }
+    dispatch(createOrderAsync(order))
+  }
+
   return (
     <>
       {!items.length && <Navigate to={'/'} replace={true} />}
+      {currentOrder && <Navigate to={`/order-success/${currentOrder.id}`} replace={true} />}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-2">
           <div className="log:col-span-3">
@@ -188,6 +206,8 @@ const Checkout = () => {
                       <li key={index} className="flex justify-between gap-x-6 px-5 py-5 border-solid border-2 border-gray-200">
                         <div className="flex min-w-0 gap-x-4">
                           <input
+                            onChange={handleAddress}
+                            value={index}
                             name="address"
                             type="radio"
                             className="h-4 w-4 border-gray-300 text-[#68c3b7] focus:ring-[#68c3b7]"
@@ -210,30 +230,39 @@ const Checkout = () => {
                       <div className="mt-6 space-y-6">
                         <div className="flex items-center gap-x-3">
                           <input
-                            id="mercado-pago"
-                            name="mercado-pago"
+                            id="mercadoPago"
+                            name="mercadoPago"
+                            onChange={handlePayment}
+                            value={'mercadoPago'}
+                            checked={paymentMethod === 'mercadoPago'}
                             type="radio"
                             className="h-4 w-4 border-gray-300 text-[#68c3b7] focus:ring-[#68c3b7]"
                           />
-                          <label htmlFor="mercado-pago" className="block text-sm font-medium leading-6 text-gray-900">
+                          <label htmlFor="mercadoPago" className="block text-sm font-medium leading-6 text-gray-900">
                             Mercado Pago
                           </label>
                         </div>
                         <div className="flex items-center gap-x-3">
                           <input
-                            id="transferencia-bancaria"
-                            name="transferencia-bancaria"
+                            id="transferencia"
+                            name="transferencia"
+                            onChange={handlePayment}
+                            value={'transferencia'}
+                            checked={paymentMethod === 'transferencia'}
                             type="radio"
                             className="h-4 w-4 border-gray-300 text-[#68c3b7] focus:ring-[#68c3b7]"
                           />
-                          <label htmlFor="transferencia-bancaria" className="block text-sm font-medium leading-6 text-gray-900">
-                            Transferencia Bancaria
+                          <label htmlFor="transferencia" className="block text-sm font-medium leading-6 text-gray-900">
+                            Transferencia
                           </label>
                         </div>
                         <div className="flex items-center gap-x-3">
                           <input
                             id="efectivo"
                             name="efectivo"
+                            onChange={handlePayment}
+                            value={'efectivo'}
+                            checked={paymentMethod === 'efectivo'}
                             type="radio"
                             className="h-4 w-4 border-gray-300 text-[#68c3b7] focus:ring-[#68c3b7]"
                           />
@@ -307,12 +336,12 @@ const Checkout = () => {
                 </div>
                 <p className="mt-0.5 text-sm text-gray-500">Envío e impuestos calculados al finalizar la compra.</p>
                 <div className="mt-6">
-                  <Link
-                    to="/checkout"
-                    className="flex items-center justify-center rounded-md border border-transparent px-6 py-3 text-base font-medium bg-primary text-white shadow-sm hover:opacity-75"
+                  <div
+                    onClick={handleOrder}
+                    className="flex items-center justify-center cursor-pointer rounded-md border border-transparent px-6 py-3 text-base font-medium bg-primary text-white shadow-sm hover:opacity-75"
                   >
                     Terminar Compra
-                  </Link>
+                  </div>
                 </div>
                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                   <p>

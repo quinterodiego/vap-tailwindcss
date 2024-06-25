@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form"
 import { selectLoggedInUser, createUserAsync } from './../authSlice'
 import { Link, Navigate } from 'react-router-dom'
@@ -31,7 +31,7 @@ const Signup = () => {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form noValidate className="space-y-6" onSubmit={handleSubmit((data) =>  dispatch(createUserAsync({
-            email: data.email, password: data.password, addresses: []
+            email: data.email, password: data.password, role: 'user', addresses: []
           })))}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">

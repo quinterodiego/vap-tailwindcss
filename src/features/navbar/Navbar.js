@@ -13,21 +13,17 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { selectItems } from '../cart/cartSlice'
 import logo_solo_img from '../../assets/logo-solo-img.png'
+import { selectLoggedInUser } from '../auth/authSlice'
 
-const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-}
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false }
+  { name: 'Productos', link: '/', user: true },
+  { name: 'Nosotros', link: '/nosotros', user: true },
+  { name: 'Admin', link: '/admin', admin: true }
 ]
 const userNavigation = [
-  { name: 'Your Profile', link: '#' },
-  { name: 'Settings', link: '#' },
-  { name: 'Sign out', link: '/login' },
+  { name: 'Datos Personales', link: '/profile' },
+  { name: 'Mis Pedidos', link: '/orders' },
+  { name: 'Salir', link: '/logout' },
 ]
 
 function classNames(...classes) {
@@ -36,6 +32,7 @@ function classNames(...classes) {
 export const Navbar = ({children}) => {
 
   const cartItems = useSelector(selectItems)
+  const user = useSelector(selectLoggedInUser)
 
   return (
     <div>
@@ -58,9 +55,10 @@ export const Navbar = ({children}) => {
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
-                          <a
+                          item[user.role] ?
+                          <Link
                             key={item.name}
-                            href={item.href}
+                            to={item.link}
                             className={classNames(
                               item.current
                                 ? 'bg-gray-900 text-white'
@@ -70,7 +68,7 @@ export const Navbar = ({children}) => {
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
-                          </a>
+                          </Link> : null
                         ))}
                       </div>
                     </div>
@@ -202,7 +200,7 @@ export const Navbar = ({children}) => {
 
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900">Tienda</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900">Verde Agua Personalizados</h1>
           </div>
         </header>
         <main>
