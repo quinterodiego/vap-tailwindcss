@@ -5,7 +5,7 @@
       "title": "Essence Mascara Lash Princess",
       "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
       "category": "beauty",
-      "price": 9.99,
+      "price": 23,
       "discountPercentage": 7.17,
       "rating": 4.94,
       "stock": 5,
@@ -56,7 +56,10 @@
         "qrCode": "https://dummyjson.com/public/qr-code.png"
       },
       "images": [
-        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
     },
@@ -547,9 +550,11 @@
       "images": [
         "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/1.png",
         "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/2.png",
-        "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/3.png"
+        "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/3.png",
+        "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png"
       ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png"
+      "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png",
+      "deleted": true
     },
     {
       "id": "10",
@@ -1825,6 +1830,20 @@
         "https://images.fravega.com/f300/393cba5a66fe2d29273ed1e7244f3e60.jpg",
         "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QEBAQDw8NDhAPEBAQEA8QDw8NDQ8NFRIWFhURExMYHSggGBomHhUVIT0hJSsuLi46FyAzOD8wNygtLisBCgoKDQ0OGg8PGDUZFR0rKystKysrKy0tLS0rLSs3LS0tLTc3Ky0tLS0rLS0tLS0rKysrKysrKysrLSsrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYDBAcCAf/EAEUQAAICAAIEBwsKBQQDAAAAAAABAgMEEQUSITEGEyJBUXGzByQ0YXKBg5GhscEUFSMyM1JzgpLRJTVCYsJjdLLwQ1Oi/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAECA//EABoRAQEBAQEBAQAAAAAAAAAAAAABEUExAiH/2gAMAwEAAhEDEQA/AO4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABReHXdAejsTVhK8Lx9ltSuc5W8XXCDnKKSSi3J5wfRzF6OI92D+c4fxYKrt7yVYuejOF2MuSbhhoJ8yjZJrzuXwJPF6bxEIOSdbaW7U2e8qnBxcmJN6S+yl1GNrWRTdJ91XSVVjjGvBSSf8AVXZn7JosXBjh9i8V9pVho+RGxe+TORaef00utlz7nw2mOo6P4SuzExw06tWU4ylGyMs48lZtOLWz1ssJz/Rj/iuH8dd3/BnQDfzfxmgAKgAAAAAAAAAAAAAAAAAAAAAAAAAABw/uv/zqj/Y09vedwOHd13+dU/7GjtryfSz1P8Hfqx6kTOlPspdT9xDcHvqrqJjS32UupnNpxHTb+ml5TLt3PikaZf00utl47nwFw0c/4rhfJu7KR0E53gX/ABbBrpjf2Mzohv58ZoADSAAAAAAAAAAAAAAAAAAAAAAAAAAAHDe65JfPd",
         "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png"
+      ]
+    },
+    {
+      "id": "bb68",
+      "title": "asdasd",
+      "description": "asdasdasd",
+      "price": 1111,
+      "stock": 1,
+      "thumbnail": "https://images.fravega.com/f300/393cba5a66fe2d29273ed1e7244f3e60.jpg",
+      "images": [
+        "https://images.fravega.com/f300/393cba5a66fe2d29273ed1e7244f3e60.jpg",
+        "https://images.fravega.com/f300/393cba5a66fe2d29273ed1e7244f3e60.jpg",
+        "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QEBAQDw8NDhAPEBAQEA8QDw8NDQ8NFRIWFhURExMYHSggGBomHhUVIT0hJSsuLi46FyAzOD8wNygtLisBCgoKDQ0OGg8PGDUZFR0rKystKysrKy0tLS0rLSs3LS0tLTc3Ky0tLS0rLS0tLS0rKysrKysrKysrLSsrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYDBAcCAf/EAEUQAAICAAIEBwsKBQQDAAAAAAABAgMEEQUSITEGEyJBUXGzByQ0YXKBg5GhscEUFSMyM1JzgpLRJTVCYsJjdLLwQ1Oi/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAECA//EABoRAQEBAQEBAQAAAAAAAAAAAAABEUExAiH/2gAMAwEAAhEDEQA/AO4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABReHXdAejsTVhK8Lx9ltSuc5W8XXCDnKKSSi3J5wfRzF6OI92D+c4fxYKrt7yVYuejOF2MuSbhhoJ8yjZJrzuXwJPF6bxEIOSdbaW7U2e8qnBxcmJN6S+yl1GNrWRTdJ91XSVVjjGvBSSf8AVXZn7JosXBjh9i8V9pVho+RGxe+TORaef00utlz7nw2mOo6P4SuzExw06tWU4ylGyMs48lZtOLWz1ssJz/Rj/iuH8dd3/BnQDfzfxmgAKgAAAAAAAAAAAAAAAAAAAAAAAAAABw/uv/zqj/Y09vedwOHd13+dU/7GjtryfSz1P8Hfqx6kTOlPspdT9xDcHvqrqJjS32UupnNpxHTb+ml5TLt3PikaZf00utl47nwFw0c/4rhfJu7KR0E53gX/ABbBrpjf2Mzohv58ZoADSAAAAAAAAAAAAAAAAAAAAAAAAAAAHDe65JfPd",
+        "https://images.fravega.com/f300/393cba5a66fe2d29273ed1e7244f3e60.jpg"
       ]
     }
   ],

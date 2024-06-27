@@ -14,17 +14,21 @@ const AdminProductForm = () => {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm()
 
   useEffect(() => {
     if(params.id) {
       dispatch(fetchProductByIdAsync(params.id))
+      reset()
+    } else {
+      dispatch(clearSelectedProduct())
     }
   }, [dispatch, params.id])
   
   useEffect(() => {
-    if(selectedProduct) {
+    if(selectedProduct && params.id) {
       setValue('title', selectedProduct.title)
       setValue('description', selectedProduct.description)
       setValue('price', selectedProduct.price)
@@ -34,8 +38,13 @@ const AdminProductForm = () => {
       setValue('image2', selectedProduct.images[1])
       setValue('image3', selectedProduct.images[2])
     }
-  }, [dispatch, selectedProduct, setValue])
+  }, [dispatch, params.id, selectedProduct, setValue])
   
+  const handleDelete = () => {
+    const product = { ...selectedProduct }
+    product.deleted = true
+    dispatch(updateProductAsync(product))
+  }
 
   return (
     <form noValidate onSubmit={handleSubmit((data) => {
@@ -49,8 +58,10 @@ const AdminProductForm = () => {
       if(params.id) {
         product.id = params.id
         dispatch(updateProductAsync(product))
+        reset()
       }else{
-        dispatch(clearSelectedProduct())
+        dispatch(createProductAsync(product))
+        reset()
       }
     })}>
       <div className="space-y-12 bg-white p-12">
@@ -254,6 +265,13 @@ const AdminProductForm = () => {
         <button type="button" className="text-sm font-semibold leading-6 text-gray-900 hoveropacity-75">
           Cancelar
         </button>
+        {selectedProduct && <button
+          onClick={e => handleDelete()}
+          className="rounded-md bg-red-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          Eliminar
+        </button>}
+        
         <button
           type="submit"
           className="rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
