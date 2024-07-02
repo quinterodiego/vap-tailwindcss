@@ -42,7 +42,7 @@ const Checkout = () => {
   }
 
   const handleOrder = (e) => {
-    const order = { items, totalAmount, totalItems, user, paymentMethod, selectedAddress, status: 'pending' }
+    const order = { items, totalAmount, totalItems, user, paymentMethod, selectedAddress, status: 'Pendiente' }
     dispatch(createOrderAsync(order))
   }
 

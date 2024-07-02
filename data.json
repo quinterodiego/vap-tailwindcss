@@ -2045,7 +2045,7 @@
         "postal_code": "1879",
         "province": "Buenos Aires"
       },
-      "status": "pending"
+      "status": "Despachado"
     },
     {
       "id": "7b27",
@@ -2159,7 +2159,7 @@
         "postal_code": "1879",
         "province": "Buenos Aires"
       },
-      "status": "pending"
+      "status": "Entregado"
     },
     {
       "id": "4fdb",
@@ -2273,7 +2273,7 @@
         "postal_code": "1879",
         "province": "Buenos Aires"
       },
-      "status": "pending"
+      "status": "Cancelado"
     }
   ]
 }
