@@ -16,7 +16,7 @@ import logo_solo_img from '../../assets/logo-solo-img.png'
 import { selectLoggedInUser } from '../auth/authSlice'
 
 const navigation = [
-  { name: 'Productos', link: '/', user: true },
+  { name: 'Productos', link: '/productos', user: true },
   { name: 'Nosotros', link: '/nosotros', user: true },
   { name: 'Productos', link: '/admin', admin: true },
   { name: 'Pedidos', link: '/admin/orders', admin: true }
@@ -38,7 +38,7 @@ export const Navbar = ({children}) => {
   return (
     <div>
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-primary">
+        <Disclosure as="nav" className="bg-white">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -62,8 +62,8 @@ export const Navbar = ({children}) => {
                             to={item.link}
                             className={classNames(
                               item.current
-                                ? 'bg-gray-900 text-white'
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                ? 'bg-white text-gray-700'
+                                : 'text-gray-700 hover:bg-gray-700 hover:text-white',
                               'rounded-md px-3 py-2 text-sm font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}
@@ -199,9 +199,9 @@ export const Navbar = ({children}) => {
           )}
         </Disclosure>
 
-        <header className="bg-white shadow">
+        <header className="bg-primary shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900">Verde Agua Personalizados</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-white">Verde Agua Personalizados</h1>
           </div>
         </header>
         <main>
