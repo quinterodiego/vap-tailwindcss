@@ -3,7 +3,7 @@ import about from '../assets/about.png'
 
 export default function About() {
   return (
-    <div className="relative isolate overflow-hidden bg-white my-24 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+    <div className="relative isolate overflow-hidden bg-white my-8 px-6 py-8 sm:py-32 lg:overflow-visible lg:px-0">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <svg
           aria-hidden="true"

@@ -27,13 +27,27 @@ import AdminHome from './pages/AdminHome';
 import AdminProductDetailPage from './pages/AdminProductDetailPage';
 import AdminProductFormPage from './pages/AdminProductFormPage';
 import AdminOrdersPage from './pages/AdminOrdersPage';
+import ProductListLanding from './features/product/components/ProductListLanding';
+import { NavbarLanding } from './features/navbar/NavbarLanding';
+import Footer from './features/footer/Footer';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Protected>
-      <Home />
-    </Protected>,
+    element: <Home />,
+  },
+  // {
+  //   path: "/",
+  //   element: <Protected>
+  //     <Home />
+  //   </Protected>,
+  // },
+  {
+    path: "/productos",
+    element: <NavbarLanding>
+      <ProductListLanding />
+      <Footer />
+    </NavbarLanding>,
   },
   {
     path: "/admin",
@@ -41,10 +55,10 @@ const router = createBrowserRouter([
       <AdminHome />
     </ProtectedAdmin>,
   },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
+  // {
+  //   path: "/login",
+  //   element: <LoginPage />,
+  // },
   {
     path: "/signup",
     element: <SignupPage />,
@@ -133,6 +147,9 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router} />
+      <a href="https://api.whatsapp.com/send?phone=5491553234838&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20productos." className="whatsapp hover:opacity-75" target="_blank" rel="noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
     </div>
   );
 }

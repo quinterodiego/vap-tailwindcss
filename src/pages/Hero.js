@@ -6,14 +6,15 @@ import hero04 from '../assets/hero04.png'
 import hero05 from '../assets/hero05.png'
 import hero06 from '../assets/hero06.png'
 import hero07 from '../assets/hero07.png'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
     <div className="relative overflow-hidden bg-white">
-      <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+      <div className="pb-80 pt-16 sm:pb-60 sm:pt-24 lg:pt-40">
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div className="sm:max-w-lg">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <h1 className="text-3xl font-bold tracking-tight text-gray-700 sm:text-6xl">
               Creamos momentos involvidables
             </h1>
             <p className="mt-4 text-xl text-gray-500">
@@ -87,12 +88,12 @@ const Hero = () => {
                 </div>
               </div>
 
-              <a
-                href="#"
+              <Link
+                to={'/productos'}
                 className="inline-block rounded-md border border-transparent bg-primary px-8 py-3 text-center font-medium text-white hover:opacity-75"
               >
                 Ver Productos
-              </a>
+              </Link>
             </div>
           </div>
         </div>

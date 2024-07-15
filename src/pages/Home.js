@@ -1,19 +1,23 @@
 import React from 'react'
-import { Navbar } from '../features/navbar/Navbar'
+import { NavbarLanding } from '../features/navbar/NavbarLanding'
 import ProductList from '../features/product/components/ProductList'
 import Hero from './Hero'
 import Contact from './Contact'
 import About from './About'
+import Footer from '../features/footer/Footer'
+import Popular from './Popular'
 
 const Home = () => {
   return (
     <div>
-      <Navbar>
+      <NavbarLanding>
         <Hero />
+        <Popular />
         <About />
         <Contact />
-        <ProductList />
-      </Navbar>
+        {/* <ProductList /> */}
+        <Footer />
+      </NavbarLanding>
     </div>
   )
 }
