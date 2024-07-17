@@ -1855,7 +1855,7 @@
       "id": "7c50",
       "email": "dquintero@allariaagro.com.ar",
       "password": "Masdasd123",
-      "role": "user",
+      "role": "admin",
       "addresses": [
         {
           "name": "Nicolas Ibarra",
@@ -2045,7 +2045,7 @@
         "postal_code": "1879",
         "province": "Buenos Aires"
       },
-      "status": "Despachado"
+      "status": "Cancelado"
     },
     {
       "id": "7b27",
