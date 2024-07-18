@@ -56,7 +56,7 @@ export default function Cart() {
                         <button
                           onClick={e => handleRemove(e, item.id)}
                           type="button"
-                          className="font-medium hover:opacity-75 text-primary"
+                          className="font-medium hover:opacity-75 text-primary_"
                         >
                           Eliminar
                         </button>
@@ -93,7 +93,7 @@ export default function Cart() {
               <Link to={'/'}>
                 <button
                   type="button"
-                  className="font-medium hover:opacity-75 text-primary"
+                  className="font-medium hover:opacity-75 text-primary_"
                 >
                   Continuar Comprando
                   <span aria-hidden="true"> &rarr;</span>

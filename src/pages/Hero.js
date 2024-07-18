@@ -90,7 +90,7 @@ const Hero = () => {
 
               <Link
                 to={'/productos'}
-                className="inline-block rounded-md border border-transparent bg-primary px-8 py-3 text-center font-medium text-white hover:opacity-75"
+                className="inline-block rounded-md border border-transparent bg-primary_ px-8 py-3 text-center font-medium text-white hover:opacity-75"
               >
                 Ver Productos
               </Link>

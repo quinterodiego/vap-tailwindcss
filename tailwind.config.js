@@ -10,7 +10,7 @@ module.exports = {
         '[auto,auto,1fr]': 'auto auto 1fr',
       },
       colors: {
-        'primary': '#68c3b7'
+        'primary_': '#68c3b7'
       }
     }
   },

@@ -380,7 +380,7 @@ export default function UserProfile() {
                     <button
                       onClick={e => handleEditForm(index)}
                       type="button"
-                      className="font-medium hover:opacity-75 text-primary"
+                      className="font-medium hover:opacity-75 text-primary_"
                     >
                       Editar
                     </button>

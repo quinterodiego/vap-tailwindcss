@@ -141,13 +141,13 @@ const AdminOrders = () => {
                         </td>
                         <td className="py-3 px-6 text-center">
                           <div className="flex item-center justify-center">
-                            <div className="w-6 mr-2 transform hover:text-primary hover:scale-110 cursor-pointer">
+                            <div className="w-6 mr-2 transform hover:text-primary_ hover:scale-110 cursor-pointer">
                               <EyeIcon className='w-6 h-6' onClick={e => handleShow(order)} />
                             </div>
-                            <div className="w-4 mr-2 transform hover:text-primary hover:scale-110 cursor-pointer">
+                            <div className="w-4 mr-2 transform hover:text-primary_ hover:scale-110 cursor-pointer">
                               <PencilIcon className='w-6 h-6' onClick={e => handleEdit(order)} />
                             </div>
-                            <div className="w-4 mr-2 transform hover:text-primary hover:scale-110 cursor-pointer">
+                            <div className="w-4 mr-2 transform hover:text-primary_ hover:scale-110 cursor-pointer">
                               
                             </div>
                           </div>

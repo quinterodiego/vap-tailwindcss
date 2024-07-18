@@ -86,7 +86,7 @@ export const Navbar = ({children}) => {
                           <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
                       </Link>
-                      {cartItems.length > 0 && <span className="inline-flex items-center mb-7 -ml-3 bg-white p-2 text-xs font-medium text-primary ring-1 ring-inset ring-red-600/10" style={{ zIndex: '1000000', borderRadius: '50%', width: '22px', height: '22px' }}>
+                      {cartItems.length > 0 && <span className="inline-flex items-center mb-7 -ml-3 bg-white p-2 text-xs font-medium text-primary_ ring-1 ring-inset ring-red-600/10" style={{ zIndex: '1000000', borderRadius: '50%', width: '22px', height: '22px' }}>
                         {cartItems.length}
                       </span>}
 

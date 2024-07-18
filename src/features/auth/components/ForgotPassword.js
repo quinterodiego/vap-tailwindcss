@@ -67,7 +67,7 @@ export default function ForgotPassword() {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Volver a {' '}
-            <Link to={'/login'} className="font-semibold leading-6 text-primary hover:opacity-75">
+            <Link to={'/login'} className="font-semibold leading-6 text-primary_ hover:opacity-75">
               Ingresar
             </Link>
           </p>

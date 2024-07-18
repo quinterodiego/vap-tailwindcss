@@ -3,21 +3,20 @@ import {
   DisclosureButton,
   DisclosurePanel,
   Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
   Transition,
 } from '@headlessui/react'
-import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link, useLocation } from 'react-router-dom'
 import logo_solo_img from '../../assets/logo-solo-img.png'
 import instagram from '../../assets/instagram.png'
+import { useEffect } from 'react'
+import { scroller } from 'react-scroll';
 
 const navigation = [
   { name: 'Inicio', link: '/', user: true },
   { name: 'Productos', link: '/productos', user: true },
-  { name: 'Nosotros', link: '/nosotros', user: true },
-  { name: 'Contacto', link: '/nosotros', user: true },
+  { name: 'Nosotros', link: '/#about', user: true },
+  { name: 'Contacto', link: '/#contact', user: true },
 ]
 const userNavigation = [
   { name: 'Datos Personales', link: '/profile' },
@@ -28,7 +27,25 @@ const userNavigation = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
+
+const scrollToTop = () => {
+  window.scrollTo(0, 0)
+}
+
 export const NavbarLanding = ({children}) => {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.replace('#', '');
+      scroller.scrollTo(sectionId, {
+        duration: 300,
+        delay: 0,
+        smooth: 'easeInOutQuart'
+      });
+    }
+  }, [location]);
 
   return (
     <div className=''>
@@ -40,14 +57,14 @@ export const NavbarLanding = ({children}) => {
                 <div className="flex w-full h-16 items-center justify-between">
                   <div className="w-full flex justify-between items-center">
                     <div className="flex-shrink-0 flex items-center gap-4">
-                      <Link to={'/'}>
+                      <Link to={'/'} onClick={scrollToTop}>
                         <img
                           className="h-10 w-10"
                           src={logo_solo_img}
                           alt="Your Company"
                         />
                       </Link>
-                      <h1 className="md:text-3xl font-bold tracking-tight text-primary">Verde Agua Personalizados</h1>
+                      <h1 className="md:text-3xl font-bold tracking-tight text-primary_">Verde Agua Personalizados</h1>
                     </div>
                     <div className="hidden md:block">
                       <div className="flex items-center space-x-4">
@@ -55,6 +72,7 @@ export const NavbarLanding = ({children}) => {
                           <Link
                             key={item.name}
                             to={item.link}
+                            onClick={item.name === 'Inicio' && scrollToTop()}
                             className={classNames(
                               item.current
                                 ? 'bg-white text-gray-700'
@@ -93,7 +111,7 @@ export const NavbarLanding = ({children}) => {
                   </div>
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
-                    <DisclosureButton className="relative inline-flex items-center justify-center rounded-md bg-gray-100 p-2 text-gray-800 hover:bg-gray-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <DisclosureButton className="relative inline-flex items-center justify-center rounded-md bg-gray-100 p-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -112,7 +130,7 @@ export const NavbarLanding = ({children}) => {
                     <DisclosureButton
                       key={item.name}
                       as="a"
-                      href={item.href}
+                      href={item.link}
                       className={classNames(
                         item.current ? 'bg-gray-100 text-white' : 'text-gray-700 hover:bg-gray-200 hover:text-white',
                         'block rounded-md px-3 py-2 text-base font-medium'
@@ -123,7 +141,7 @@ export const NavbarLanding = ({children}) => {
                     </DisclosureButton>
                   ))}
                 </div>
-                <div className="border-t border-gray-700 pb-3 pt-4">
+                <div className="pb-3 pt-4">
                   <div className="flex items-center px-5">
                   </div>
                 </div>

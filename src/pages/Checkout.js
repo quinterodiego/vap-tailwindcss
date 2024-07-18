@@ -184,7 +184,7 @@ const Checkout = () => {
                 </div>
                 
                 <div className="mt-6 flex items-center justify-end gap-x-6">
-                  <button type="button" className="text-sm font-semibold leading-6 text-primary w-32 x-3 py-1 rounded-md border-solid border-2 border-primary hover:opacity-75">
+                  <button type="button" className="text-sm font-semibold leading-6 text-primary_ w-32 x-3 py-1 rounded-md border-solid border-2 border-primary hover:opacity-75">
                     Resetear
                   </button>
                   <button
@@ -312,7 +312,7 @@ const Checkout = () => {
                               <button
                                 onClick={e => handleRemove(e, item.id)}
                                 type="button"
-                                className="font-medium hover:opacity-75 text-primary"
+                                className="font-medium hover:opacity-75 text-primary_"
                               >
                                 Eliminar
                               </button>
@@ -349,7 +349,7 @@ const Checkout = () => {
                     <Link to={'/'}>
                       <button
                         type="button"
-                        className="font-medium hover:opacity-75 text-primary"
+                        className="font-medium hover:opacity-75 text-primary_"
                       >
                         Continuar Comprando
                         <span aria-hidden="true"> &rarr;</span>
