@@ -24,6 +24,7 @@ const products = [
   { obj: img10, name: 'producto 10', price: 3000 },
   { obj: img11, name: 'producto 11', price: 3000 },
   { obj: img12, name: 'producto 12', price: 3000 },
+  { obj: img12, name: 'producto 12', price: 3000 },
   // { obj: img01, name: 'producto 01' },
   // { obj: img01, name: 'producto 01' },
   // { obj: img01, name: 'producto 01' },
