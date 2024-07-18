@@ -16,7 +16,7 @@ export default function Contact() {
       </div>
       <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-        <div className="sm:col-span-2">
+          <div className="sm:col-span-2">
             <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
               Nombre completo
             </label>
@@ -62,7 +62,7 @@ export default function Contact() {
         <div className="mt-10">
           <button
             type="submit"
-            className="block w-full rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="block w-full rounded-md bg-primary_ px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Enviar
           </button>
