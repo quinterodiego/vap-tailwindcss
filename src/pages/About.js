@@ -55,7 +55,7 @@ export default function About() {
                 <li className="flex gap-x-3">
                   <i className="text-primary_ fa-solid fa-hourglass-start mt-2"></i>
                   <span>
-                    <strong className="font-semibold text-gray-900">El Comienzo.</strong> Con una pequeña inversión y un gran sueño, Laura y Mateo comenzaron a diseñar anotadores, etiquetas candy bar, y tarjetas personales desde la comodidad de su hogar. Su primer cliente fue una amiga cercana que deseaba hacer de la fiesta de cumpleaños de su hija un evento inolvidable. La atención al detalle y la calidad de los productos hicieron que la voz se corriera rápidamente.
+                    <strong className="font-semibold text-gray-900">El Comienzo.</strong> Con una pequeña inversión y un gran sueño, Julieta comenzaró a diseñar anotadores, etiquetas candy bar, y tarjetas personales desde la comodidad de su hogar. Su primer cliente fue una amiga cercana que deseaba hacer de la fiesta de cumpleaños de su hija un evento inolvidable. La atención al detalle y la calidad de los productos hicieron que la voz se corriera rápidamente.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
