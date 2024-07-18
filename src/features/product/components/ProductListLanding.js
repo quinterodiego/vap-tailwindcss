@@ -5,15 +5,25 @@ import img04 from '../../../assets/hero04.png'
 import img05 from '../../../assets/hero05.png'
 import img06 from '../../../assets/hero06.png'
 import img07 from '../../../assets/hero07.png'
+import img08 from '../../../assets/libretas01.png'
+import img09 from '../../../assets/popular01.png'
+import img10 from '../../../assets/popular02.png'
+import img11 from '../../../assets/popular03.png'
+import img12 from '../../../assets/popular04.png'
 
 const products = [
   { obj: img01, name: 'producto 01', price: 3000 },
-  { obj: img02, name: 'producto 01', price: 3000 },
-  { obj: img03, name: 'producto 01', price: 3000 },
-  { obj: img04, name: 'producto 01', price: 3000 },
-  { obj: img05, name: 'producto 01', price: 3000 },
-  { obj: img06, name: 'producto 01', price: 3000 },
-  { obj: img07, name: 'producto 01', price: 3000 },
+  { obj: img02, name: 'producto 02', price: 3000 },
+  { obj: img03, name: 'producto 03', price: 3000 },
+  { obj: img04, name: 'producto 04', price: 3000 },
+  { obj: img05, name: 'producto 05', price: 3000 },
+  { obj: img06, name: 'producto 06', price: 3000 },
+  { obj: img07, name: 'producto 07', price: 3000 },
+  { obj: img08, name: 'producto 08', price: 3000 },
+  { obj: img09, name: 'producto 09', price: 3000 },
+  { obj: img10, name: 'producto 10', price: 3000 },
+  { obj: img11, name: 'producto 11', price: 3000 },
+  { obj: img12, name: 'producto 12', price: 3000 },
   // { obj: img01, name: 'producto 01' },
   // { obj: img01, name: 'producto 01' },
   // { obj: img01, name: 'producto 01' },
