@@ -54,26 +54,26 @@ export default function About() {
             <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
               <ul role="list" className="mt-4 space-y-8 text-gray-600">
                 <li className="flex gap-x-3">
-                  <CloudArrowUpIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-indigo-600" />
-                  <span>
-                    <strong className="font-semibold text-gray-900">La Inspiración.</strong> Un día, mientras caminaban por la playa al atardecer, Laura y Mateo se inspiraron en los tonos calmantes y refrescantes del mar. El color verde agua, que se reflejaba en las olas, les recordó la paz y la felicidad de los momentos especiales en la vida. Fue entonces cuando decidieron crear una empresa que capturara esa misma esencia en productos personalizados.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <LockClosedIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-indigo-600" />
+                  <i className="text-primary fa-solid fa-hourglass-start mt-2"></i>
                   <span>
                     <strong className="font-semibold text-gray-900">El Comienzo.</strong> Con una pequeña inversión y un gran sueño, Laura y Mateo comenzaron a diseñar anotadores, etiquetas candy bar, y tarjetas personales desde la comodidad de su hogar. Su primer cliente fue una amiga cercana que deseaba hacer de la fiesta de cumpleaños de su hija un evento inolvidable. La atención al detalle y la calidad de los productos hicieron que la voz se corriera rápidamente.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
-                  <ServerIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-indigo-600" />
+                  {/* <ServerIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-indigo-600" /> */}
+                  <i className="text-primary fa-solid fa-chart-simple mt-2"></i>
                   <span>
-                    <strong className="font-semibold text-gray-900">Database backups.</strong> Ac tincidunt sapien
-                    vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                    <strong className="font-semibold text-gray-900">Crecimiento y Diversificación</strong> A medida que aumentaba la demanda, Verde Agua Personalizados expandió su catálogo para incluir vinilos decorativos, souvenirs personalizados, y una línea completa de productos escolares. Cada artículo es diseñado con amor y cuidado, asegurando que cada cliente reciba exactamente lo que imaginó, o incluso algo mejor.
+                  </span>
+                </li>
+                <li className="flex gap-x-3">
+                <i className="text-primary fa-regular fa-handshake mt-2"></i>
+                  <span>
+                    <strong className="font-semibold text-gray-900">Nuestro Compromiso</strong> En Verde Agua Personalizados, creemos que cada ocasión merece un toque especial. Nos dedicamos a escuchar a nuestros clientes y trabajar mano a mano con ellos para crear productos que no solo cumplan, sino que superen sus expectativas. Nuestra misión es brindar productos únicos que reflejen la personalidad y el estilo de cada individuo.
                   </span>
                 </li>
               </ul>
-              <p className="mt-8">
+              {/* <p className="mt-8">
                 Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor
                 fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac
                 adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
@@ -84,7 +84,7 @@ export default function About() {
                 Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
                 tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam
                 turpis ipsum eu a sed convallis diam.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
