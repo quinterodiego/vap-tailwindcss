@@ -22,13 +22,5 @@
   ],
   "rules": {
     // Tus reglas personalizadas
-  },
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        // Reglas específicas para archivos TypeScript
-      }
-    }
-  ]
+  }
 }
