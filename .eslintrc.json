@@ -5,5 +5,8 @@
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended"
   ],
-  "plugins": ["react", "import", "jsx-a11y"]
+  "plugins": ["react", "import", "jsx-a11y"],
+  "eslint.options": {
+    "extensions": [ ".html", ".js", ".vue", ".jsx" ]
+  }
 }
