@@ -43,7 +43,7 @@ export default function ForgotPassword() {
                     ...register("email", { 
                       required: "El email es obligatorio",
                       pattern: {
-                        value: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi,
+                        value: /\b[\w\\.-]+@[\w\\.-]+\.\w{2,4}\b/gi,
                         message: 'Email no válido'
                       }
                     })

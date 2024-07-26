@@ -15,15 +15,15 @@ function classNames(...classes) {
 
 const Footer = () => {
   return (
-    <footer class="bg-white mt-4">
-      <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-          <Link to="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-            <img src={logo_solo_img} class="h-8" alt="Verde Agua Personalizados Logo" />
-            <span class="self-center text-md font-semibold whitespace-nowrap text-gray-500">Verde Agua Personalizados</span>
+    <footer className="bg-white mt-4">
+      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="sm:flex sm:items-center sm:justify-between">
+          <Link to="/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+            <img src={logo_solo_img} className="h-8" alt="Verde Agua Personalizados Logo" />
+            <span className="self-center text-md font-semibold whitespace-nowrap text-gray-500">Verde Agua Personalizados</span>
           </Link>
-          <span class="block text-md text-gray-500 sm:text-center"> Todos los derechos reservados. © 2024</span>
-          <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+          <span className="block text-md text-gray-500 sm:text-center"> Todos los derechos reservados. © 2024</span>
+          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
             {navigation.map((item) => (
               <Link
                 key={item.name}

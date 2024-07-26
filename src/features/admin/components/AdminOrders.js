@@ -15,6 +15,7 @@ const AdminOrders = () => {
   console.log(totalOrders)
   
   const handleShow = (oder) => {
+    console.log('first')
   }
 
   const handleEdit = (order) => {
@@ -89,8 +90,8 @@ const AdminOrders = () => {
                 </thead>
                 <tbody className="text-gray-600 text-sm font-light">
                   {
-                    orders.map(order => (
-                      <tr className="border-b border-gray-200 hover:bg-gray-100">
+                    orders.map((order, i) => (
+                      <tr key={i} className="border-b border-gray-200 hover:bg-gray-100">
                         <td className="py-3 px-6 text-left whitespace-nowrap">
                           <div className="flex items-center">
                             <div className="mr-2">
@@ -101,7 +102,7 @@ const AdminOrders = () => {
                         </td>
                         <td className="py-3 px-6 text-left">
                         {
-                          order.items.map(item => <div className="flex items-center justify-center">
+                          order.items.map((item, i) => <div key={i} className="flex items-center justify-center">
                             <div className="flex items-center">
                               <div className="mr-2">
                                 <img

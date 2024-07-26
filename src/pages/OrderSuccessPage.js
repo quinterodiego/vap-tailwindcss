@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { resetCartAsync } from '../features/cart/cartSlice'
 import { useDispatch, useSelector } from 'react-redux'
