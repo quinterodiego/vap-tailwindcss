@@ -23,8 +23,5 @@
   "rules": {
     "react/prop-types": "off"
     // Tus reglas personalizadas
-  },
-  "eslint.options": {
-    "resolvePluginsRelativeTo": "~/buildsystem/node_modules"
   }
 }
