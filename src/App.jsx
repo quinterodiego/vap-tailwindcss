@@ -6,7 +6,7 @@ import PageNotFound from './pages/404';
 import ProductListLanding from './features/product/components/ProductListLanding';
 import Footer from './features/footer/Footer';
 
-import './App.css'
+// import './App.css'
 
 const router = createBrowserRouter([
   {
