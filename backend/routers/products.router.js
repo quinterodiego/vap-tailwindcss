@@ -1,12 +1,10 @@
 import { Router } from 'express'
+import { getAll, getById } from '../controllers/products.controller.js'
 
 const ProductRouter = Router()
 
-ProductRouter.get('/', async (req, res) => {
-  res.json({})
-})
+ProductRouter.get('/', getAll)
 
-ProductRouter.get('/:id', async (req, res) => {
-  const product = products.find(produc =>  product.id === req.params.id)
-  res.json(product)
-})
+ProductRouter.get('/:id', getById)
+
+export default ProductRouter
