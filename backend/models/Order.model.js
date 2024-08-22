@@ -17,7 +17,8 @@ const orderSchema = new mongoose.Schema({
   orderItems: [orderItemSchema],
   shippingAddress: {
     address: { type: String, required: true },
-    city: { type: String, required: true },
+    city: { type: String, required: true }, 
+    province: { type: String, required: true }, 
     cp: { type: String, required: true },
   },
   paymentMethod: { type: String, required: true, default: 'Mercado Pago' },

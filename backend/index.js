@@ -5,6 +5,7 @@ import { MongoDBConnection } from './utils/dbConnect.js'
 import ProductRouter from './routers/products.router.js'
 import RouterSeeder from './databaseSeeder.js'
 import UserRouter from './routers/users.router.js'
+import OrderRouter from './routers/orders.router.js'
 
 const app = express()
 const PORT = process.env.PORT || 4000
@@ -13,6 +14,7 @@ app.use(express.json())
 
 app.use('/api/products', ProductRouter)
 app.use('/api/users', UserRouter)
+app.use('/api/orders', OrderRouter)
 
 MongoDBConnection()
 
