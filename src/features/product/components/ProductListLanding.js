@@ -1,30 +1,33 @@
 import React, { useState } from 'react'
-import img01 from '../../../assets/hero01.png'
-import img02 from '../../../assets/hero02.png'
-import img03 from '../../../assets/hero03.png'
-import img04 from '../../../assets/hero04.png'
-import img05 from '../../../assets/hero05.png'
-import img06 from '../../../assets/hero06.png'
-import img07 from '../../../assets/hero07.png'
-import img08 from '../../../assets/libretas01.png'
-import img09 from '../../../assets/popular01.png'
-import img10 from '../../../assets/popular02.png'
-import img11 from '../../../assets/popular03.png'
-import img12 from '../../../assets/popular04.png'
+import img01 from '../../../assets/productos/alcancia.jpg'
+import img02 from '../../../assets/productos/llavero.jpg'
+import img03 from '../../../assets/productos/valija.jpg'
 
 const products = [
-  { obj: img01, name: 'Producto 01', src: '/src/assets/hero01.png', price: 3000 },
-  { obj: img02, name: 'Producto 02', src: '/src/assets/hero02.png', price: 3000 },
-  { obj: img03, name: 'Producto 03', src: '/src/assets/hero03.png', price: 3000 },
-  { obj: img04, name: 'Producto 04', src: '/src/assets/hero04.png', price: 3000 },
-  { obj: img05, name: 'Producto 05', src: '/src/assets/hero05.png', price: 3000 },
-  { obj: img06, name: 'Producto 06', src: '/src/assets/hero06.png', price: 3000 },
-  { obj: img07, name: 'Producto 07', src: '/src/assets/hero07.png', price: 3000 },
-  { obj: img08, name: 'Producto 08', src: '/src/assets/libretas01.png', price: 3000 },
-  { obj: img09, name: 'Producto 09', src: '/src/assets/popular01.png', price: 3000 },
-  { obj: img10, name: 'Producto 10', src: '/src/assets/popular02.png', price: 3000 },
-  { obj: img11, name: 'Producto 11', src: '/src/assets/popular03.png', price: 3000 },
-  { obj: img12, name: 'Producto 12', src: '/src/assets/popular04.png', price: 3000 },
+  { 
+    obj: img01, 
+    name: 'Alcancias plásticas', 
+    src: '/src/assets/productos/alcancia.jpg', 
+    price: 1000,
+    description: 'Sticker personalizado sobre un lado',
+    stock: 50 
+  },
+  { 
+    obj: img02, 
+    name: 'Llavero de acrilico con cadena',
+    src: '/src/assets/productos/llavero.jpg', 
+    price: 8000,
+    description: 'Sticker personalizado sobre un lado',
+    stock: 100 
+  },
+  { 
+    obj: img03, 
+    name: 'Valijas medianas', 
+    src: '/src/assets/productos/valija.jpg', 
+    price: 1200,
+    description: 'Sticker personalizado sobre un lado',
+    stock: 100 
+  },
   // { obj: img01, name: 'producto 01' },
   // { obj: img01, name: 'producto 01' },
   // { obj: img01, name: 'producto 01' },
@@ -44,11 +47,11 @@ export default function ProductListLanding() {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">Nuestro Productos</h2>
+        <h2 className="text-2xl font-bold tracking-tight text-gray-500">Nuestro Productos</h2>
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product, i) => (
-            <a key={i} data-lightbox="photos" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => selectCuadro(product)}>
+            <a key={i} data-lightbox="photos" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => selectCuadro(product)} className='cursor-pointer'>
            
               <div className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
@@ -78,13 +81,18 @@ export default function ProductListLanding() {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
-                <h1 className="modal-title fs-5" id="exampleModalLabel">{productoSeleccionado.name}</h1>
+                <h1 className="modal-title fs-5 font-bold text-gray-500" id="exampleModalLabel">{productoSeleccionado.name}</h1>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div className="modal-body">
                 <img className='img-fluid' src={productoSeleccionado.obj} alt="" />
                 
                 <p className='pt-2'><b>Precio:</b> ${productoSeleccionado.price}</p>
+                <p className='pt-2'><b>Detalles:</b> {productoSeleccionado.description}</p>
+                <p className='pt-2'><b>Stock:</b> {productoSeleccionado.stock}</p>
+                <a href="https://api.whatsapp.com/send?phone=5491553297491&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20productos." className="hover:opacity-75" target="_blank" rel="noreferrer">
+                  <p className='p-2 text-center text-xl' style={{ color: '#25d366' }}>Consultar <i className="fa-brands fa-whatsapp"></i></p>
+                </a>
               </div>
               <div className="modal-footer">
                 <button type="button" className="" data-bs-dismiss="modal">Cerrar</button>
