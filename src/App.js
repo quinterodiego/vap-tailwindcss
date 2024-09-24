@@ -32,16 +32,16 @@ import { NavbarLanding } from './features/navbar/NavbarLanding';
 import Footer from './features/footer/Footer';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
   // {
   //   path: "/",
-  //   element: <Protected>
-  //     <Home />
-  //   </Protected>,
+  //   element: <Home />,
   // },
+  {
+    path: "/",
+    element: <Protected>
+      <Home />
+    </Protected>,
+  },
   {
     path: "/productos",
     element: <NavbarLanding>
@@ -55,10 +55,10 @@ const router = createBrowserRouter([
       <AdminHome />
     </ProtectedAdmin>,
   },
-  // {
-  //   path: "/login",
-  //   element: <LoginPage />,
-  // },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
   {
     path: "/signup",
     element: <SignupPage />,
