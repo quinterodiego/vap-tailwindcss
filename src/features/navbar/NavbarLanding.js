@@ -128,10 +128,10 @@ export const NavbarLanding = ({children}) => {
               <DisclosurePanel className="md:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                   {navigation.map((item) => (
-                    <DisclosureButton
+                     <Link
                       key={item.name}
-                      as="a"
-                      href={item.link}
+                      to={item.link}
+                      onClick={item.name === 'Inicio' && scrollToTop()}
                       className={classNames(
                         item.current ? 'bg-gray-100 text-white' : 'text-gray-700 hover:bg-gray-200 hover:text-white',
                         'block rounded-md px-3 py-2 text-base font-medium'
@@ -139,7 +139,7 @@ export const NavbarLanding = ({children}) => {
                       aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
-                    </DisclosureButton>
+                    </Link>
                   ))}
                 </div>
                 <div className="pb-3 pt-4">

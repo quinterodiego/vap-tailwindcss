@@ -11,15 +11,18 @@ import { Link } from 'react-router-dom'
 const Hero = () => {
   return (
     <div className="relative overflow-hidden bg-white">
-      <div className="pb-80 pt-16 sm:pb-60 sm:pt-24 lg:pt-40">
+      <div className="pb-80 pt-12 sm:pb-60 sm:pt-24 lg:pt-40">
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div className="sm:max-w-lg">
             <h1 className="text-3xl font-bold tracking-tight text-gray-700 sm:text-6xl">
-              Creamos momentos involvidables
+              Creamos momentos inolvidables
             </h1>
             <p className="mt-4 text-xl text-gray-500">
-            En Verde Agua Personalizados, convertimos tus ideas en recuerdos únicos. Personaliza agendas, llaveros, artículos de librería y souvenirs para hacer cada ocasión memorable.
+            En <span className='font-bold hover:text-primary_'>Verde Agua Personalizados</span> podrás encontrar todo lo que buscas para tu evento, souvenirs, decoración, invitaciones digitales. También para tu emprendimiento, creación de logos, folletos publicitarios, tarjetas personales y mucho más.
             </p>
+            {/* <p className="mt-4 text-xl text-gray-500">
+            En Verde Agua Personalizados, convertimos tus ideas en recuerdos únicos. Personaliza agendas, llaveros, artículos de librería y souvenirs para hacer cada ocasión memorable.
+            </p> */}
           </div>
           <div>
             <div className="mt-10">

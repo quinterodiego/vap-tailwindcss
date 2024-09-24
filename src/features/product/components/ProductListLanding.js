@@ -9,16 +9,20 @@ const products = [
     name: 'Alcancias plásticas', 
     src: '/src/assets/productos/alcancia.jpg', 
     price: 1000,
-    description: 'Sticker personalizado sobre un lado',
-    stock: 50 
+    description: 'Sticker personalizado en todo su contorno',
+    dimensions: '9cm de alto x 9cm de diámetro',
+    colors: 'Pastel - Fuertes',
+    stock: 'Disponible'
   },
   { 
     obj: img02, 
     name: 'Llavero de acrilico con cadena',
     src: '/src/assets/productos/llavero.jpg', 
-    price: 8000,
-    description: 'Sticker personalizado sobre un lado',
-    stock: 100 
+    price: 800,
+    description: 'Imagen de ambos lados. Acompaña señalador personalizado',
+    dimensions: 'Imágenes 6cm de alto x 4cm de ancho - Llavero 12cm - Señalador 14cm',
+    colors: 'Según imagen',
+    stock: 'Disponible' 
   },
   { 
     obj: img03, 
@@ -26,7 +30,9 @@ const products = [
     src: '/src/assets/productos/valija.jpg', 
     price: 1200,
     description: 'Sticker personalizado sobre un lado',
-    stock: 100 
+    dimensions: '14cm de ancho x 10cm de alto (sin manija) x 4cm de profundidad - Altura total con manija 13cm',
+    colors: 'Pastel - Clásicos - Transparente',
+    stock: 'Disponible' 
   },
   // { obj: img01, name: 'producto 01' },
   // { obj: img01, name: 'producto 01' },
@@ -52,7 +58,6 @@ export default function ProductListLanding() {
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product, i) => (
             <a key={i} data-lightbox="photos" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => selectCuadro(product)} className='cursor-pointer'>
-           
               <div className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                   <img
@@ -61,7 +66,7 @@ export default function ProductListLanding() {
                     className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                   />
                 </div>
-                <div className="mt-4 flex justify-between">
+                <div className="mt-2 flex justify-between">
                   <div>
                     <h3 className="text-sm text-gray-700">
                       {/* <a href={product.href}> */}
@@ -89,6 +94,8 @@ export default function ProductListLanding() {
                 
                 <p className='pt-2'><b>Precio:</b> ${productoSeleccionado.price}</p>
                 <p className='pt-2'><b>Detalles:</b> {productoSeleccionado.description}</p>
+                <p className='pt-2'><b>Dimensiones:</b> {productoSeleccionado.dimensions}</p>
+                <p className='pt-2'><b>Colores:</b> {productoSeleccionado.colors}</p>
                 <p className='pt-2'><b>Stock:</b> {productoSeleccionado.stock}</p>
                 <a href="https://api.whatsapp.com/send?phone=5491553297491&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20productos." className="hover:opacity-75" target="_blank" rel="noreferrer">
                   <p className='p-2 text-center text-xl' style={{ color: '#25d366' }}>Consultar <i className="fa-brands fa-whatsapp"></i></p>
