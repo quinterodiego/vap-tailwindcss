@@ -175,8 +175,8 @@ export default function ProductListLanding() {
                   className="mySwiper"
                 >
                   {
-                    productoSeleccionado.obj.map(producto => (
-                      <SwiperSlide>
+                    productoSeleccionado.obj && productoSeleccionado.obj.map(producto => (
+                      producto && <SwiperSlide>
                         <img className='img-fluid' src={producto} alt="" />
                       </SwiperSlide>
                     ))
