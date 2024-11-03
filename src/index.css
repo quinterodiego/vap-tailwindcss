@@ -42,3 +42,7 @@ code {
 .whatsapp i {
 	margin-top: 16px;
 }
+
+.swiper-pagination-bullet {
+  background-color: #68c3b7;
+}
